@@ -15,7 +15,7 @@ __email__ = "daniel.g.smith@emory.edu"
 __status__ = "Development"
 
 def read_env_vars():
-    df = pd.read_csv('env_vars.csv')
+    df = pd.read_csv('.password-store/env_vars.csv')
     print(df)
 
 def set_env_vars():

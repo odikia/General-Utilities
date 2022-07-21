@@ -41,7 +41,7 @@ def env_vars_to_dataframe():
 def write_env_vars():
     df = env_vars_to_dataframe()
     print(df)
-    df.to_csv('env_vars.csv')
+    df.to_csv('.password-store/env_vars.csv')
 
 def main():
     write_env_vars()
