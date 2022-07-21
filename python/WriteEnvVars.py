@@ -1,5 +1,18 @@
+#!/usr/bin/env python
+"""docstring TBD
+"""
+
 import os
 import pandas as pd
+
+__author__ = "Daniel Smith"
+__copyright__ = "n/a"
+__credits__ = ["Daniel Smith"]
+__license__ = "GNU"
+__version__ = "3.0"
+__maintainer__ = "Daniel Smith"
+__email__ = "daniel.g.smith@emory.edu"
+__status__ = "Development"
 
 def env_as_dict():
     """
