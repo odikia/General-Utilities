@@ -16,13 +16,10 @@ __status__ = "Development"
 
 def read_env_vars():
     df = pd.read_csv('.password-store/env_vars.csv')
-    print(df)
     return df
 
 def set_env_vars():
     df = read_env_vars()
-    print('the df is:')
-    print(df)
     for key in df.keys():
         if key != 'PATH':
             value = df[key][0]
@@ -31,9 +28,6 @@ def set_env_vars():
             ## https://stackoverflow.com/a/59489965 ##
         else:
             print('skipping PATH')
-
-def main():
-    set_env_vars()
 
 if __name__ == '__main__':
     set_env_vars()
