@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-"""docstring TBD
+"""
+Filter environment variables based on a common naming convention and write them to a .csv file.
 """
 
 import os
@@ -39,17 +40,24 @@ def filter_env_vars(env_vars):
     return filtered_env_vars
 
 def env_vars_to_dataframe():
+    """
+    Return a dataframe of environment variables that have been filtered.
+    """
     env_vars = env_as_dict()
     filtered_env_vars = filter_env_vars(env_vars)
     df = pd.DataFrame(filtered_env_vars, index=[0])
     return df
 
 def write_env_vars():
+    """
+    Write environment variables to a .csv file.
+    """
     df = env_vars_to_dataframe()
     print(df)
-    df.to_csv('.password-store/env_vars.csv')
+    df.to_csv('.password-store/env_vars.csv',index=False) # .password-store added to gitignore
 
-def main():
+
+if __name__ == '__main__':
     write_env_vars()
 
-main()
+    
