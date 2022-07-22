@@ -24,10 +24,9 @@ def env_vars_to_filter():
     """
     Return a list of environment variables to filter based on a common naming convention.
     """
-    naming_convention = 'z_'
+    naming_convention = 'Z_'
     new_filt = dict(filter(lambda item: item[0].startswith(naming_convention), env_as_dict().items()))
     return new_filt
-
 def filter_env_vars(env_vars):
     """
     Return a dictionary of environment variables that are not in the list of

@@ -17,13 +17,23 @@ __status__ = "Development"
 def read_env_vars():
     df = pd.read_csv('.password-store/env_vars.csv')
     print(df)
+    return df
 
 def set_env_vars():
     df = read_env_vars()
+    print('the df is:')
+    print(df)
     for key in df.keys():
-        os.environ[key] = df[key][0]
+        if key != 'PATH':
+            value = df[key][0]
+            os.system("SETX {0} {1} /M".format(key, value)) 
+            ## YOU SHOULD NEVER USE THIS FOR PATH VARIABLES!! SETX SCREWS THINGS UP IF PATH as will trunc paths ##
+            ## https://stackoverflow.com/a/59489965 ##
+        else:
+            print('skipping PATH')
 
 def main():
     set_env_vars()
 
-main()
+if __name__ == '__main__':
+    set_env_vars()
